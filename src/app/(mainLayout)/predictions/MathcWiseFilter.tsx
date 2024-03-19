@@ -1,15 +1,19 @@
+import Spinner from '@/components/Loader';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 
 const MathcWiseFilter = ({ selectSportsFilter, setSelectTitlesFilter, selectTitlesFilter }: any) => {
     const [titles, setTitles] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
     useEffect(() => {
         (async () => {
+            setIsLoading(true)
             const getData = await axios.get(`/api/sports/get?sport=${selectSportsFilter}`)
             const uniqueTitlesSet: any = new Set(getData.data.data.map((res: { title: any; }) => res.title));
             const uniqueTitles: any = [...uniqueTitlesSet];
             setTitles(uniqueTitles)
+            setIsLoading(false)
         })()
     }, [selectSportsFilter])
     const settings = {
@@ -23,7 +27,7 @@ const MathcWiseFilter = ({ selectSportsFilter, setSelectTitlesFilter, selectTitl
 
     return (
         <div className="slider-container">
-            {titles.length > 0 && <Slider {...settings}>
+            {isLoading ? <Spinner /> : titles.length > 0 && <Slider {...settings}>
                 {titles?.map((prediction: any) => (
                     <div
                         key={prediction}

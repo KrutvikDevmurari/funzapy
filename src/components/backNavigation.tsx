@@ -7,7 +7,7 @@ const BottomNavigation = () => {
             <div id="bottom-navigation"
                 className="text-black mb-5 rounded-xl mx-5 shadow-lg shadow-gray-500/300 z-10 bg-amber-300 drop-shadow-2xl">
                 <div id="tabs" className="flex justify-between">
-                    <NavigationLink href="/web/quiz" tabClass="tab-home" text="Tournaments" svgContent={(
+                    <NavigationLink href="/quiz" tabClass="tab-home" text="Tournaments" svgContent={(
                         <img src="/images/menuicon2.svg" alt="Stories" className="inline-block mb-1" style={{ width: '25px', height: '25px' }} />
                     )} />
 

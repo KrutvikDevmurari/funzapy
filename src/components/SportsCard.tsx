@@ -3,8 +3,9 @@ import React from 'react';
 import { useRouter } from 'next/navigation'
 
 
-const SportsCard = ({ matchData }: any) => {
+const SportsCard = ({ matchData, color }: any) => {
     const router = useRouter()
+    console.log(color, "color")
     return (
         <div className="flex m-3 bg-transparent shadow-lg relative drop-shadow-lg h-32 cursor-pointer" onClick={() => router.push(`/predictions/${matchData.id}`, { scroll: false })}>
             <div>
@@ -62,9 +63,8 @@ const SportsCard = ({ matchData }: any) => {
                 </div>
 
                 <div className="text-center w-full text-white absolute top-0 text-shadow-md line-clamp-1">{matchData.title}</div>
-
                 <div className="absolute w-full flex justify-center top-28">
-                    <div className="bg-[#818cf8] rounded-sm px-2 text-white shadow text-sm text-shadow-sm">
+                    <div className={`${color !== undefined ? color : " bg-[#818cf8]"} rounded-sm px-2 text-white shadow text-sm text-shadow-sm`}>
                         <span className="timerdiv" id={`timer${matchData.id}`} >{matchData.date}</span>
                     </div>
                 </div>

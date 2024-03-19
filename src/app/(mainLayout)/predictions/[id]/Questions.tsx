@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Modal from './LoginModal';
 import { useParams } from 'next/navigation'
 import axios from 'axios';
+import Spinner from '@/components/Loader';
 
 
 const QuestionCard = ({ question, options, setIsOpen }: any) => {
@@ -24,17 +25,20 @@ const QuestionCard = ({ question, options, setIsOpen }: any) => {
 const MainComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [questionData, setQuestionData] = useState<any>([])
+    const [isLoading, setIsLoading] = useState(false)
     const params = useParams()
     useEffect(() => {
         (async () => {
+            setIsLoading(true)
             const response: any = await axios.get(`/api/sports/questions/get?id=${params.id}`)
             setQuestionData(response?.data?.data[0]?.questions)
+            setIsLoading(false)
         })();
     }, [])
 
     return (
         <div>
-            {questionData.length > 0 ? questionData?.map((question: any, index: number) => (
+            {isLoading ? <Spinner /> : questionData.length > 0 ? questionData?.map((question: any, index: number) => (
                 <QuestionCard key={index} question={question.question} setIsOpen={setIsOpen} options={question.options} />
             )) : <p>No Data Found</p>}
             <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
