@@ -13,7 +13,7 @@ const page = () => {
         <div className='flex flex-col gap-[10px] pb-[200px]'>
             <Header />
             <TabMenu />
-            <FiltersChips data={sportsData} dataFilter={selectSportsFilter} setDataFilter={setSelectSportsFilter} setSelectTitlesFilter={setSelectTitlesFilter} />
+            <FiltersChips header={"Select Sports"} data={sportsData} dataFilter={selectSportsFilter} setDataFilter={setSelectSportsFilter} setSelectTitlesFilter={setSelectTitlesFilter} />
             {selectSportsFilter !== "All" && <MathcWiseFilter selectSportsFilter={selectSportsFilter} selectTitlesFilter={selectTitlesFilter} setSelectTitlesFilter={setSelectTitlesFilter} />}
             <MatchList selectSportsFilter={selectSportsFilter} selectTitlesFilter={selectTitlesFilter} />
         </div>

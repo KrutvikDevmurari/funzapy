@@ -15,7 +15,7 @@ const BottomNavigation = () => {
                         <img src="/images/menuicon2.svg" alt="Stories" className="inline-block mb-1" style={{ width: '25px', height: '25px' }} />
                     )} />
 
-                    <NavigationLink href="/web/stories" tabClass="tab-account" text="Stories" svgContent={(
+                    <NavigationLink href="/stories" tabClass="tab-account" text="Stories" svgContent={(
                         <>
                             <img src="/images/menuicon3.webp" alt="Stories" className="inline-block mb-1" style={{ width: '25px', height: '25px' }} />
                             <span className="absolute animate-ping inline-block w-2 h-2 bg-blue-600 rounded-full"></span>

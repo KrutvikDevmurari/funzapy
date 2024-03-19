@@ -1,10 +1,10 @@
-import CommonHeaders from '@/components/SelectSports';
+import CommonHeaders from '@/components/CommonHeaders';
 import React from 'react';
 import Slider from 'react-slick';
 
 
 
-const FiltersChips = ({ setDataFilter, dataFilter, setSelectTitlesFilter, data }: any) => {
+const FiltersChips = ({ setDataFilter, dataFilter, header, setSelectTitlesFilter, data }: any) => {
     // Array containing data for each sports chip
 
     const settings = {
@@ -16,7 +16,7 @@ const FiltersChips = ({ setDataFilter, dataFilter, setSelectTitlesFilter, data }
     };
     return (
         <>
-            {data.length > 0 && <CommonHeaders text={"Select Sports"} color={"bg-[#4f46e5]"} />}
+            {(data.length > 0 && header) && <CommonHeaders text={header} color={"bg-[#4f46e5]"} />}
             <div className="slider-container">
                 <Slider {...settings}>
                     {data.map((res: { imgSrc: any; text: any; }, index: any) => (

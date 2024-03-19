@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SportsCard from '../../../components/SportsCard';
 import axios from 'axios';
-import CommonHeaders from '@/components/SelectSports';
+import CommonHeaders from '@/components/CommonHeaders';
 
 const MatchList = ({ selectSportsFilter, selectTitlesFilter }: any) => {
 
