@@ -22,7 +22,7 @@ const BottomNavigation = () => {
                         </>
                     )} />
 
-                    <NavigationLink href="/web/games" tabClass="tab-kategori" text="Games" svgContent={(
+                    <NavigationLink href="/games" tabClass="tab-kategori" text="Games" svgContent={(
                         <img src="/images/menuicon4.svg" alt="Stories" className="inline-block mb-1" style={{ width: '25px', height: '25px' }} />
                     )} />
                 </div>
