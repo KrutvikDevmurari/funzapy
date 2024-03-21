@@ -1,17 +1,18 @@
+"use client"
 import Header from '@/components/header'
 import { FC } from 'react'
-import SportsSlider from './SportsSlider'
-import TournamentList from './TournamentList'
+import HowToPlayComponent from './HowToPlayComponent';
+
 
 interface pageProps {
 
 }
 
 const page: FC<pageProps> = ({ }) => {
-    return <div className='mb-[200px]'>
+
+    return <div className='mb-[200px] min-h-screen bg-gray-100'>
         <Header />
-        <SportsSlider />
-        <TournamentList />
+        <HowToPlayComponent />
     </div>
 }
 

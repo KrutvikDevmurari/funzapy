@@ -1,12 +1,16 @@
 'use client'
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
+import Sidebar from './sidebar';
 
 // Header component containing the logo and menu icons
 const Header = () => {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const toggleModal = () => setModalIsOpen(!modalIsOpen)
+
     return (
         <div className="flex items-center dark:text-white border-b-2 rounded-b-2xl">
-            <span className="cursor-pointer text-4xl mr-3 ml-3">
+            <span className="cursor-pointer text-4xl mr-3 ml-3" onClick={() => toggleModal()}>
                 <div className="relative top-2 float-right animate-ping w-2 h-2 align-middle bg-red-500 rounded-full" style={{ top: '8px' }}></div>
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAACsklEQVRoge2YP2/UMBjGn9dN2zvaDQEDZaQqIwNiuRugdOJ73A6Cr4AQCDFCPwkTougAUSTEWNqO3NI/rFepSfwyxHfkj+0kbtJkyCOddPLF9u+1Xz/vOUCnTp06NSky/vLs12Mi3gbjJsBRG7PqxKqJo8/8e/RMNKjhGVb9Y+NF7bqxAZY8YaJR+G7zgw5TGCMjft80PJhBhDUBuW3iNAYAxlrT8LFnbpUPoD3wljy3BtAm+FlbmQDaBG/mt+9Ae+DNEXil4GUAnE8BDuuBJwF4PZBYKARvDUALdj7FzpO7GN6+ah3UVePfx3j0+iuwtGLYnaxyXCi1CjKoDR4AhhvXo10uCA/kBaDN+ZplOhcG2QoZMvAkMD74e2FGk74fngJCzOecgZBlF8xnQOc2i1fw4O1PQPqGAxvrW8RtkHIbIQCvXxg+J4AU/GyC5RUDfEVWqYN3OsRN+HxJeMBaBzTwYQj4U0CG1VdYZpVCPRBlz0HpALQr70+x8/QeBut11YEjbL38DCytpoI29yngQrFAwqA2eAAYbtwAZKiBr6KQxXO+TiWcLNGgVbFCNoMXHsb7p5Vw6rR7eKLqQBLerQ7oVt7r4eGbH6rcO/i81W0wP8RZ+Asc4oTbiAVVB+qySt3Ku6bQpfu8Bd4lhbTwYQD4ZyA2/WPM8fkMPGL9EC2n11d1IB/eGoAODP4ZPj2/j8H6NWs3V33ZO8LWi4/RfSA9v0G5d+JE2sigNngAGNxRdSAzv7mP/a2ENucvQZUVsjS8EBjvn1SFmdHuwTFAs2vTf3jbRcpSBzRus9jH5qtvapsdfF7zbMJtiKL7QBre7UKjsUoSwPIq6rVKHbxDCjXj8+XgrQG0Ct79tUq74XMCaBO8ww6w5Elr4Bl/ygdANGKWkzbACw5HJs5OnTp1alb/AIoZrfBIBPh9AAAAAElFTkSuQmCC" alt="Menu" />
             </span>
@@ -32,6 +36,7 @@ const Header = () => {
                         0 <br />COINS</span>
                 </Link>
             </div>
+            <Sidebar toggleModal={toggleModal} modalIsOpen={modalIsOpen} />
         </div>
     );
 };
