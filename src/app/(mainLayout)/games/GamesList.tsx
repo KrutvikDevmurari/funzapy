@@ -13,21 +13,21 @@ const GamesList: FC<GamesListProps> = ({ }) => {
         <div className="flex flex-wrap justify-evenly -mx-px overflow-hidden mt-3 pl-3">
             {GameData.map(res => {
                 return (
-                    <GameCard imageUrl={res.imageUrl} title={res.title} />
+                    <GameCard key={res.title} imageUrl={res.imageUrl} title={res.title} />
                 )
             })}
         </div>
         <div className="flex flex-wrap justify-evenly -mx-px overflow-hidden mt-3 pl-3">
             {WarGames.map(res => {
                 return (
-                    <GameCard imageUrl={res.imageUrl} title={res.title} />
+                    <GameCard key={res.title} imageUrl={res.imageUrl} title={res.title} />
                 )
             })}
         </div>
         <div className="flex flex-wrap justify-evenly -mx-px overflow-hidden mt-3 pl-3">
             {OtherGames.map(res => {
                 return (
-                    <GameCard imageUrl={res.imageUrl} title={res.title} />
+                    <GameCard key={res.title} imageUrl={res.imageUrl} title={res.title} />
                 )
             })}
         </div>

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { FC, useEffect, useState } from 'react'
 import StoriesCard from './StoriesCard'
 import axios from 'axios'
@@ -28,7 +28,7 @@ const StoriesList: FC<StoriesListProps> = ({ toggleModal, selectSportsFilter, is
         <div className='grid grid-cols-2 gap-4 px-4 pt-2'>
             {isLoading ? <Spinner /> : storiesData?.map((res: { imageUrl: string; title: string, stories: any }) => {
                 return (
-                    <StoriesCard toggleModal={toggleModal} setstory={setstory} stories={res.stories} imageUrl={res.imageUrl} title={res.title} />
+                    <StoriesCard key={res.title} toggleModal={toggleModal} setstory={setstory} stories={res.stories} imageUrl={res.imageUrl} title={res.title} />
                 )
             })}
             <StoriesComponent setStoriesData={setStoriesData} story={story} isOpen={isOpen} closeModal={toggleModal} />

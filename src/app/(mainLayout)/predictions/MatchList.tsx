@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React, { useEffect, useState } from 'react';
 import SportsCard from '../../../components/SportsCard';
 import axios from 'axios';

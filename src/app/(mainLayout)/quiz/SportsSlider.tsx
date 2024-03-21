@@ -35,7 +35,7 @@ const SportsSlider: FC<SportsSliderProps> = ({ }) => {
             <CategoryHeader category="Sports Predictions" url="/predictions" />
             <Slider {...settings}>
                 {MatchData.map((res: { imgSrc: any; text: any; }) => (
-                    <SportsCard matchData={res} color={'bg-[#fed7aa]'} />
+                    <SportsCard key={res.text} matchData={res} color={'bg-[#fed7aa]'} />
                 ))}
             </Slider></> : <p>No Data Found</p>) : <Spinner />}
     </div>

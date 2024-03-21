@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import Spinner from '@/components/Loader';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
