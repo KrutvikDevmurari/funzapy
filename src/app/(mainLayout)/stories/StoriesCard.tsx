@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 
 interface StoriesCard {
@@ -10,7 +11,7 @@ interface StoriesCard {
 
 const StoriesCard = ({ imageUrl, title, toggleModal, stories, setstory }: StoriesCard) => {
     return (
-        <div className="relative cursor-pointer" onClick={() => {
+        <div key={title} className="relative cursor-pointer" onClick={() => {
             toggleModal()
             setstory(stories)
         }}>

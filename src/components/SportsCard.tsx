@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 const SportsCard = ({ matchData, color }: any) => {
     const router = useRouter()
     return (
-        <div className="flex m-3 bg-transparent shadow-lg relative drop-shadow-lg h-32 cursor-pointer" onClick={() => router.push(`/predictions/${matchData.id}`, { scroll: false })}>
+        <div key={matchData.id} className="flex m-3 bg-transparent shadow-lg relative drop-shadow-lg h-32 cursor-pointer" onClick={() => router.push(`/predictions/${matchData.id}`, { scroll: false })}>
             <div>
                 <img
                     alt={matchData.title}

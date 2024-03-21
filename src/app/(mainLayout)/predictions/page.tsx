@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import React, { useState } from 'react'
 import TabMenu from '../../../components/TabMenu'
 import FiltersChips from '../../../components/FiltersChips'
